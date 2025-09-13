@@ -5,7 +5,7 @@ body {
     background: url('bg.png');
     background-size: cover;
     background-attachment: fixed;
-    font-family: 'Bitcount Grid Double', sans-serif;
+   
     background-repeat: no-repeat;
 
 
@@ -18,6 +18,7 @@ body {
 
 .header {
     text-align: center;
+     font-family: 'Bitcount Grid Double', sans-serif;
 
     font-size: 2.5rem;
     letter-spacing: 2px;
@@ -234,38 +235,12 @@ button[type="submit"]:hover {
 }
 
 
-/* Ensure the pseudo-element is attached to the correct label and positioned visibly */
-/* Show GIF on the right only when the textarea is active (focused) */
-textarea {
-    position: relative;
-    display: inline-block;
-}
 
-textarea::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    transform: translate(12px, -50%);
-    width: 200px;
-    height: 50px;
-    background: url("https://www.animatedimages.org/data/media/996/animated-blank-name-plate-image-0745.gif") no-repeat center/contain;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .2s, transform .2s;
-    z-index: 1000;
-}
 
-.gif1 {
-    background: url("https://www.animatedimages.org/data/media/996/animated-blank-name-plate-image-0745.gif");
-    z-index: 1000;
-}
 
-textarea:focus::after,
-textarea:focus-visible::after {
-    opacity: 1;
-    transform: translate(12px, -50%) scale(1.02);
-}
+
+
+
 
 @media (max-width: 600px) {
     html {
@@ -349,4 +324,9 @@ textarea:focus-visible::after {
         left: 100%;
         transform: translate(6px, -50%);
     }
+}
+
+.itemlist {
+    margin-bottom: 50px;
+ font-family: 'Edu NSW ACT Cursive', cursive;
 }

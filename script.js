@@ -58,6 +58,7 @@ function displayitem(item) {
     const div = document.createElement("div")
     div.classList.add("msg")
     div.innerHTML = `
+    <h1>MAI HU ${item.name}</h1>
     <h3>item name: ${item.items}</h3>
     <p>item description: ${item.desc}</p>
     <p>item location: ${item.loc}</p>
@@ -68,3 +69,33 @@ function displayitem(item) {
     `
     itemlist.appendChild(div)
 }
+
+
+
+
+
+
+
+
+function searchAndScroll() {
+  const query = document.getElementById("searchBox").value.toLowerCase();
+  const items = document.querySelectorAll(".item");
+  let found = false;
+
+  items.forEach(item => {
+    const text = item.textContent.toLowerCase();
+    if (text.includes(query) && !found) {
+      item.scrollIntoView({ behavior: "smooth", block: "center" });
+      item.style.backgroundColor = "#ffeaa7"; // Optional highlight
+      setTimeout(() => item.style.backgroundColor = "", 2000); // Remove highlight
+      found = true;
+    }
+  });
+
+  if (!found) {
+    alert("Item not found!");
+  }
+}
+
+
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <title>Lost Property Office</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="header">DEV NINJAS</h1>
+    </header>
+    <section class="section">
+    <form class="form" id="form">
+            <label for="name" class="l ">NAME :</label>
+            <input type="text" class="i st" name="name" id="name" placeholder="ENTER YOUR NAME" required>
+            <br><br>
+            <label for="item" class="l">ITEM NAME :</label>
+            <input type="text" id="item" name="item" class="i st" placeholder="ENTER ITEM NAME" required>
+            <br><br>
+            <label for="contact" class="l" >CONTACT NO :</label>
+            <input type="text" id="contact" required name="contact" class="i st" placeholder="NUMBER TOH BOL 🤨">
+            <br><br>
+            <label for="location" class="l">LOCATION :</label>
+            <input type="text" id="location" name="location" required class="i st" placeholder="KAHA MILA?🤔">
+            <label for="identity" class="l">IDENTITY :</label>
+            <input type="text" id="identity" name="identity" class="i st" placeholder="ENTER UNIQUE MARK">
+            <br><br>
+            <label for="status" class="l">ITEM :</label>
+            <select name="status" id="status" class="f st">
+                <option class="f" value="lost">Lost</option>
+                <option class="f" value="found">Found</option>
+            </select>
+            <br><br>
+            <label for="textarea" class="l">DESCRIPTION :</label><br>
+            <textarea name="desc" id="textarea" cols="30" rows="3" required class="f st"
+                placeholder="ENTER DESCRIPTION"></textarea><br>
+            <br>
+            <button type="submit">SUBMIT</button>
+        </form>
+        <div id="itemlist"></div>
+    </section>
+    <div class = "gif1"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -100,7 +100,8 @@ function searchAndScroll() {
 
 "use strict";
 
-const screen = document.getElementById("screen");
+// For dragon: select <g id="screen"> inside SVG
+const screen = document.querySelector("svg > g#screen");
 
 // Debug: Check if screen element is found
 console.log("Dragon screen element:", screen);
@@ -293,15 +294,32 @@ if (screen) {
     let rad = 0;
 
     if (isMobile) {
-        // Mobile: Perimeter tracing movement
+        // Mobile: Perimeter tracing movement with random speed burst
         let mobileEdge = 0; // 0=top, 1=right, 2=bottom, 3=left
         let mobileProgress = 0;
+        let mobileSpeed = 0.02; // Normal speed
+        let burstActive = false;
+        let burstTimeout = null;
+
+        function maybeStartBurst() {
+            if (!burstActive && Math.random() < 0.01) { // ~1% chance per frame
+                burstActive = true;
+                mobileSpeed = 0.04 + Math.random() * 0.1; // Fast speed
+                // End burst after 0.3-0.7s
+                burstTimeout = setTimeout(() => {
+                    mobileSpeed = 0.02;
+                    burstActive = false;
+                }, 300 + Math.random() * 1000);
+            }
+        }
 
         const updateMobileDragonTarget = () => {
             const margin = 50;
 
+            maybeStartBurst();
+
             // Move along perimeter
-            mobileProgress += 0.005; // Slow movement speed
+            mobileProgress += mobileSpeed;
 
             if (mobileProgress > 1) {
                 mobileProgress = 0;

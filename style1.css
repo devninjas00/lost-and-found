@@ -398,3 +398,10 @@ use {
   stroke: #ffffff;
   stroke-width: 0.5;
 }
+
+/* Cat animation styles */
+.cat-anim {
+  z-index: 10000 !important;
+  pointer-events: none;
+  transition: transform 0.4s cubic-bezier(.5, 1.8, .5, 1), left 0.4s, top 0.4s;
+}

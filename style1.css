@@ -294,6 +294,75 @@ body {
 
 
 svg {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 9999 !important;
+  pointer-events: none;
+  cursor: pointer;
+}
+
+
+.dragon-stretched {
+  filter: drop-shadow(0 0 8px #00ffff) drop-shadow(0 0 16px #00ffff);
+  opacity: 1;
+}
+
+.dragon-collapsed {
+  filter: drop-shadow(0 0 8px #ff00ff) drop-shadow(0 0 16px #ff00ff);
+  opacity: 1;
+}
+
+.dragon-head {
+  filter: drop-shadow(0 0 10px #ffff00) drop-shadow(0 0 20px #ffff00);
+  opacity: 1;
+}
+
+.dragon-fins {
+  filter: drop-shadow(0 0 8px #00ff00) drop-shadow(0 0 16px #00ff00);
+  opacity: 1;
+}
+
+
+use {
+  opacity: 1;
+  fill: #ffffff;
+  stroke: #ffffff;
+  stroke-width: 0.5;
+}
+
+/* Dragon animation body styles */
+
+/* SVG container for dragon */
+svg {
+  cursor: pointer;
+}
+
+.dragon-stretched {
+  filter: drop-shadow(0 0 4px #00ffff) drop-shadow(0 0 8px #00ffff);
+}
+
+.dragon-collapsed {
+  filter: drop-shadow(0 0 4px #ff00ff) drop-shadow(0 0 8px #ff00ff);
+}
+
+.dragon-head {
+  filter: drop-shadow(0 0 6px #ffff00) drop-shadow(0 0 12px #ffff00);
+}
+
+.dragon-fins {
+  filter: drop-shadow(0 0 4px #00ff00) drop-shadow(0 0 8px #00ff00);
+}
+
+
+.itemlist {
+  margin-bottom: 50px;
+  font-family: 'Edu NSW ACT Cursive', cursive;
+}
+
+svg {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -328,15 +397,4 @@ use {
   fill: #ffffff;
   stroke: #ffffff;
   stroke-width: 0.5;
-}
-
-/* Dragon animation body styles */
-body,
-html {
-  touch-action: none;
-}
-
-/* SVG container for dragon */
-svg {
-  cursor: pointer;
 }
